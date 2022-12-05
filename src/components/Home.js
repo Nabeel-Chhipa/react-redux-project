@@ -2,7 +2,8 @@ import "../Home.css";
 import iphone from "../assets/iphone.jpg";
 import cart from "../assets/cart.jpg";
 
-const Home = () => {
+const Home = (props) => {
+  console.log('Props from Home component:', props)
   return (
     <div>
       <div className="add-to-cart_wrapper">
@@ -19,7 +20,7 @@ const Home = () => {
           <span>Price: $1000.00</span>
         </div>
         <div className="btn-wrapper item">
-          <button>Add To Cart</button>
+          <button onClick={()=>props.addToCartHandler({price:1000.00, name: 'iphone'})}>Add To Cart</button>
         </div>
       </div>
     </div>
