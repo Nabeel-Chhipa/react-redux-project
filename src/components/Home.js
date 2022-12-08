@@ -1,16 +1,10 @@
 import "../Home.css";
 import iphone from "../assets/iphone.jpg";
-import cart from "../assets/cart.jpg";
 
 const Home = (props) => {
-  console.log("Props from Home component:", props.data);
+  // console.log("Props from Home component:", props);
   return (
     <div>
-      <span className="cartCounter">{props.data.length}</span>
-      <div className="add-to-cart_wrapper">
-        <img src={cart} alt="cart" />
-      </div>
-
       <h1>Home Container</h1>
       <div className="cart-wrapper">
         <div className="img-wrapper item">
@@ -27,6 +21,13 @@ const Home = (props) => {
             }
           >
             Add To Cart
+          </button>
+          <button
+            onClick={() =>
+              props.removeToCartHandler()
+            }
+          >
+            Remove
           </button>
         </div>
       </div>
